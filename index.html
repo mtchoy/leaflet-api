@@ -74,7 +74,11 @@
 
         var searchParams = new URLSearchParams(location.search);
 
-        map.setView(searchParams.get("center").split(","), searchParams.get("zoom"));
+        if (searchParams.get("center") && searchParams.get("zoom")) {
+            map.setView(searchParams.get("center").split(","), searchParams.get("zoom"));
+        } else {
+            map.setView([22.34, 114.18], 17);
+        }
 
         for (var pair of searchParams.entries()) {
 
