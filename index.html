@@ -87,7 +87,7 @@
                 map.on('locationerror', onLocationError);
             }
 
-            if (pair[0] == "markers") {
+            if (pair[0] == "marker") {
                 L.marker(pair[1].split("|")[1].split(",")).addTo(map)
                     .bindPopup(pair[1].split("|")[0]).openPopup();
             }
